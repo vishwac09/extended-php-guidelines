@@ -1,22 +1,13 @@
 <?php
-
-
 /**
- * StaticClassAccessSniff.
+ * \EPG\Sniffs\StaticClassAccessSniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
 
-/**
- * Avoid including static Class references.
- *
- * @category PHP
- * @package  PHP_CodeSniffer
- * @link     http://pear.php.net/package/PHP_CodeSniffer
- * @link     https://www.php.net/manual/en/control-structures.match.php
- */
+namespace EPG\Sniffs\StaticClassAccessSniff;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;

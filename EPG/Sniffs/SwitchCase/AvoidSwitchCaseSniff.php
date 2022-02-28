@@ -1,12 +1,14 @@
 <?php
 
 /**
- * AvoidSwitchCaseSniff.
+ * \EPG\Sniffs\AvoidSwitchCaseSniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
+
+namespace EPG\Sniffs\AvoidSwitchCaseSniff;
 
 /**
  * Avoid using switch case statement, use the new PHP >= 8.0 match expression.

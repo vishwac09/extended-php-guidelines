@@ -1,21 +1,13 @@
 <?php
-
 /**
- * OrderedMemberFunctionSniff.
+ * \EPS\Sniffs\OrderedMemberFunctionSniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
 
-/**
- * Member function of a class must be in ascending order.
- *
- * @category PHP
- * @package  PHP_CodeSniffer
- * @link     http://pear.php.net/package/PHP_CodeSniffer
- * @link     https://www.php.net/manual/en/control-structures.match.php
- */
+namespace EPG\Sniffs\OrderedMemberFunctionSniff;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;

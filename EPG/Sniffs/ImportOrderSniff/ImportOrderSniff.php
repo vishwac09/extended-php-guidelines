@@ -1,21 +1,13 @@
 <?php
-
 /**
- * ImportOrderSniff.
+ * \EPG\Sniffs\ImportOrderSniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
 
-/**
- * Group Drupal/Symfony imports and third party libraries added via Composer separately.
- *
- * @category PHP
- * @package  PHP_CodeSniffer
- * @link     http://pear.php.net/package/PHP_CodeSniffer
- * @link     https://www.php.net/manual/en/control-structures.match.php
- */
+namespace EPG\Sniffs\ImportOrderSniff;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
