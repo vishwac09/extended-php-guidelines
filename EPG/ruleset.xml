@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="EPS">
+    <description>Extended PHP standards.</description>
+    
+    <!-- All Drupal code files must be UTF-8 encoded and we treat them as such. -->
+    <arg name="encoding" value="utf-8"/>
+
+    <arg name="extensions" value="php,module,inc,install,modules"/>
+    
+    <!-- Ignore various version control directories. -->
+    <exclude-pattern>*/\.git/*</exclude-pattern>
+    
+</ruleset>

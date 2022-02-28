@@ -1,0 +1,14 @@
+{
+    "name": "vishwac09/extended-php-guidelines",
+    "type": "phpcodesniffer-standard",
+    "description": "Provides set of additional coding guidelines.",
+    "keywords": ["phpcs", "standards", "code review"],
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=5.4.0",
+        "squizlabs/php_codesniffer": ">=2.8.1 <3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=3.7 <6"
+    }
+}
