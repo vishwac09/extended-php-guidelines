@@ -28,8 +28,8 @@ __OR__
 
 Add via composer as global dependencies
 ```
-composer require global --dev dealerdirect/phpcodesniffer-composer-installer
-composer require global --dev vishwac09/extended-php-guidelines
+composer global require --dev dealerdirect/phpcodesniffer-composer-installer
+composer global require --dev vishwac09/extended-php-guidelines
 ```
 
 Add via GIT
@@ -61,9 +61,13 @@ phpcs --standard=EPG --colors file1.php, file2.inc
 ```
 FILE: /Users/hp/Documents/temp.php
 ------------------------------------------------------------------------------------------------------
-FOUND 0 ERRORS AND 2 WARNINGS AFFECTING 2 LINES
+FOUND 0 ERRORS AND 5 WARNINGS AFFECTING 5 LINES
 ------------------------------------------------------------------------------------------------------
   1 | WARNING | Group Drupal/Symfony imports and third party libraries added via composer separately.
- 22 | WARNING | Do not use static class references.
+ 26 | WARNING | Member functions of class must be defined in ascending order
+ 28 | WARNING | Do not use static class references.
+ 40 | WARNING | Member functions of interface must be defined in ascending order
+ 50 | WARNING | Do not use switch expression. With PHP >= 8.0 use the new match expression
+    |         | (https://www.php.net/manual/en/control-structures.match.php).
 ------------------------------------------------------------------------------------------------------
 ```
