@@ -17,8 +17,8 @@
  * @link     https://www.php.net/manual/en/control-structures.match.php
  */
 
-use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
 
 class AvoidSwitchCaseSniff implements Sniff {
     
@@ -31,9 +31,9 @@ class AvoidSwitchCaseSniff implements Sniff {
         // This rule mus t only be applicable if using php-cli >= 8.
         if (intval($phpVersion[0]) >= 8) {
             if ($tokens[$stackPtr]['content'] === 'switch') {
-                $error = 'Do not use switch expression. With PHP >= 8.0 use '
+                $warn = 'Do not use switch expression. With PHP >= 8.0 use '
                         . 'the new match expression (https://www.php.net/manual/en/control-structures.match.php).';
-                $phpcsFile->addWarning($error, $stackPtr, 'AvoidSwitchCase');
+                $phpcsFile->addWarning($warn, $stackPtr, 'AvoidSwitchCase');
             }
         }
     }

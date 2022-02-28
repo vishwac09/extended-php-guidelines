@@ -17,8 +17,8 @@
  * @link     https://www.php.net/manual/en/control-structures.match.php
  */
 
-use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
 
 class OrderedMemberFunctionSniff implements Sniff {
 
@@ -37,6 +37,7 @@ class OrderedMemberFunctionSniff implements Sniff {
         // We have the index of the Class/Inerface/Trait.
         for ($i = $stackPtr; $i < $tokenCount; $i++) {
             if ($tokens[$i]['type'] === 'T_FUNCTION') {
+                // The loop is added to avoid spaces between function keyword and its name.
                 for ($j = $i; $j < $tokenCount; $j++) {
                    if ($tokens[$j]['type'] === 'T_STRING') {
                        // We are only interested in function name.
@@ -47,14 +48,14 @@ class OrderedMemberFunctionSniff implements Sniff {
             }            
             if (in_array($tokens[$i]['type'], $breakCondition) && $i != $stackPtr) {
                 // Break when we encounter the next structure 
-                // Class/Trait/Interace.
+                // Class/Trait/Interface.
                 break;
             }
         }
         $sortedFunctionOrder = $defaultFunctionOrder;
         sort($sortedFunctionOrder, SORT_ASC);
         $diff = array_diff_assoc($defaultFunctionOrder, $sortedFunctionOrder);
-        if (count($diff) > 0) {
+        if (!empty($diff)) {
             $warn = 'Member functions of %s must be defined in ascending order';
             $data = [$tokens[$stackPtr]['content']];
             $phpcsFile->addWarning($warn, $stackPtr, 'OrderedFunctions', $data);
