@@ -14,7 +14,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 
 class StaticClassAccessSniff implements Sniff
 {
-    
+
     /**
      * @inheritDoc
      */
@@ -27,14 +27,14 @@ class StaticClassAccessSniff implements Sniff
             'parent',
             'self'
         ];
-        
+
+        // Key word before double colon if is not one of above, then it is a class name.
         if (!in_array($tokens[$stackPtr - 1]['content'], $ignoreWhen)) {
             $warn = 'Do not use static class references.';
             $phpcsFile->addWarning($warn, $stackPtr, 'StaticClassAccess');
         }
-        
     }
-    
+
     /**
      * @inheritDoc
      */
@@ -42,5 +42,4 @@ class StaticClassAccessSniff implements Sniff
     {
         return [T_DOUBLE_COLON];
     }
-    
 }

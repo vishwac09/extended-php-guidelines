@@ -22,29 +22,28 @@ namespace EPG\Sniffs\AvoidSwitchCaseSniff;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 
-class AvoidSwitchCaseSniff implements Sniff {
-    
+class AvoidSwitchCaseSniff implements Sniff
+{
+
     /**
      * @inheritDoc
      */
-    public function process(File $phpcsFile, $stackPtr) {
+    public function process(File $phpcsFile, $stackPtr)
+    {
         $tokens = $phpcsFile->getTokens();
-        $phpVersion = phpversion();
-        // This rule mus t only be applicable if using php-cli >= 8.
-        if (intval($phpVersion[0]) >= 8) {
-            if ($tokens[$stackPtr]['content'] === 'switch') {
-                $warn = 'Do not use switch expression. With PHP >= 8.0 use '
-                        . 'the new match expression (https://www.php.net/manual/en/control-structures.match.php).';
-                $phpcsFile->addWarning($warn, $stackPtr, 'AvoidSwitchCase');
-            }
+        // This rule must only be applicable when using php-cli >= 8.
+        if (intval(phpversion()[0]) >= 8 && $tokens[$stackPtr]['content'] === 'switch') {
+            $warn = 'Do not use switch expression. With PHP >= 8.0 use '
+                    . 'the new match expression (https://www.php.net/manual/en/control-structures.match.php).';
+            $phpcsFile->addWarning($warn, $stackPtr, 'AvoidSwitchCase');
         }
     }
 
     /**
      * @inheritDoc
      */
-    public function register(): array {
+    public function register(): array
+    {
         return [T_SWITCH];
     }
-
 }
