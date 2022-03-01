@@ -1,7 +1,7 @@
 {
     "name": "vishwac09/extended-php-guidelines",
     "type": "phpcodesniffer-standard",
-    "description": "Provides set of additional coding guidelines.",
+    "description": "Provides set of additional coding/style guidelines to sniff PHP code.",
     "keywords": ["phpcs", "standards", "code review"],
     "license": "GPL-2.0+",
     "require": {
